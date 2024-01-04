@@ -1,0 +1,15 @@
+anniversary_year = int(input("Enter the year of the anniversary: ")) # Input the year of the anniversary
+
+leap_year = (anniversary_year % 4 == 0 and anniversary_year % 100 != 0) or (anniversary_year % 400 == 0) # Check if the anniversary year is a leap year
+
+# Find and print the next or previous anniversary
+if leap_year:
+    while not ((anniversary_year + 4) % 4 == 0 and (anniversary_year + 4) % 100 != 0) or ((anniversary_year + 4) % 400 == 0):
+        anniversary_year += 1
+    result_year = anniversary_year + 4
+    print("The next leap year anniversary is in", result_year)
+else:
+    while (anniversary_year - 1) % 4 == 0 and (anniversary_year - 1) % 100 != 0 or (anniversary_year - 1) % 400 == 0:
+        anniversary_year -= 1
+    result_year = anniversary_year
+    print("The previous non-leap year anniversary is in", result_year)
